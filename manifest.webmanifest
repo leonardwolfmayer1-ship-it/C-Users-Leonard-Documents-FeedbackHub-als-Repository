@@ -1,0 +1,10 @@
+{
+  "name": "THE Hollow Knight",
+  "short_name": "HollowKnight",
+  "description": "Neon-Bossfight-Browsergame mit Story- und Endlosmodus.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#071019",
+  "theme_color": "#071019",
+  "lang": "de"
+}

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="THE Hollow Knight ist ein schnelles Neon-Bossfight-Browsergame mit Story- und Endlosmodus.">
+  <meta name="theme-color" content="#071019">
+  <meta property="og:title" content="THE Hollow Knight">
+  <meta property="og:description" content="Ein Neon-Bossfight direkt im Browser.">
+  <meta property="og:type" content="website">
+  <title>THE Hollow Knight</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-card">
+      <div class="menu-kicker">Neon Boss Fight</div>
+      <h1>THE Hollow Knight</h1>
+      <p>Waehle einen Modus oder starte nach einer Niederlage direkt neu.</p>
+      <div class="menu-actions">
+        <button class="menu-button primary" id="startStory">Bosskampf Starten</button>
+        <button class="menu-button" id="startEndless">Endlos Starten</button>
+        <button class="menu-button admin-toggle" id="toggleAdmin">Admin-Modus: Aus</button>
+      </div>
+      <div class="menu-help">WASD bewegen, Maus oder Q/E drehen, Linksklick schiesst, Rechtsklick feuert Raketen, Leertaste dashen</div>
+    </div>
+  </div>
+
+  <div class="hud">
+    <div class="title">THE Hollow Knight</div>
+    <div class="subhead">
+      <span id="modeLabel">Noch nicht gestartet</span>
+      <span id="roundLabel">Runde 0</span>
+      <span id="highscoreLabel">Highscore 0</span>
+      <span id="adminLabel">Admin-Modus Aus</span>
+    </div>
+    <div class="debug-line">
+      <span id="debugLabel">Debug: boot</span>
+    </div>
+    <div class="bars">
+      <div class="bar-card">
+        <span>Dein Leben</span>
+        <div class="bar">
+          <div class="fill player" id="playerHealth"></div>
+        </div>
+      </div>
+      <div class="bar-card">
+        <span>Boss Leben</span>
+        <div class="bar enemy-bar">
+          <div class="phase-marker" aria-hidden="true"></div>
+          <div class="phase-marker phase-three-marker" aria-hidden="true"></div>
+          <div class="fill enemy" id="enemyHealth"></div>
+        </div>
+      </div>
+      <div class="bar-card">
+        <span>Goldene Raketen</span>
+        <div class="bar special-bar">
+          <div class="fill special" id="specialCharge"></div>
+        </div>
+      </div>
+    </div>
+    <div class="tips">
+      <span>WASD bewegen</span>
+      <span>Maus drehen</span>
+      <span>Q/E oder Pfeile fein drehen</span>
+      <span>Linksklick schiessen</span>
+      <span>F schiessen</span>
+      <span>Rechtsklick feuert 3 Raketen</span>
+      <span>Shift sprinten</span>
+      <span>Leertaste dashen</span>
+      <span>R neustarten</span>
+      <span>Admin-Tasten (T=Boss spawnen, Z=One-Shot, U=unendlich Leben)</span>
+    </div>
+    <div class="message" id="message">Spiel wird geladen...</div>
+  </div>
+
+  <canvas id="game" aria-label="Spielbereich"></canvas>
+
+  <script src="game.js"></script>
+</body>
+</html>
